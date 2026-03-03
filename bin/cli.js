@@ -64,7 +64,7 @@ if(flags.help||(!flags.stdin&&pos.length===0)){
     ${co(C.gr,'# Pipe to an LLM')}
     snapmd https://example.com | llm "summarize this"
 
-  ${co(C.d,'https://github.com/suhasholla/snapmd')}
+  ${co(C.d,'https://github.com/suhashollakc/snapmd')}
 `);
   process.exit(flags.help?0:1);
 }

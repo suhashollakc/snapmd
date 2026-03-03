@@ -16,11 +16,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/suhasholla/snapmd.git"
+    "url": "git+https://github.com/suhashollakc/snapmd.git"
   },
-  "homepage": "https://github.com/suhasholla/snapmd#readme",
+  "homepage": "https://github.com/suhashollakc/snapmd#readme",
   "bugs": {
-    "url": "https://github.com/suhasholla/snapmd/issues"
+    "url": "https://github.com/suhashollakc/snapmd/issues"
   },
   "engines": { "node": ">=18.0.0" },
   "files": ["bin/","src/","README.md","LICENSE"],

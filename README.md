@@ -136,11 +136,11 @@ Only one runtime dependency: `linkedom` for server-side DOM parsing. Everything 
 Contributions welcome! Especially: new source parsers (GitHub, Twitter, Reddit, PDF), edge case fixes, and performance improvements.
 
 ```bash
-git clone https://github.com/suhasholla/snapmd.git
+git clone https://github.com/suhashollakc/snapmd.git
 cd snapmd && npm install
 echo '<h1>Test</h1><p>Hello</p>' | node bin/cli.js --stdin
 ```
 
 ## License
 
-MIT &copy; [Suhas Holla](https://github.com/suhasholla)
+MIT &copy; [Suhas Holla](https://github.com/suhashollakc)
