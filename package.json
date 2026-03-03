@@ -1,6 +1,6 @@
 {
   "name": "snapmd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clip any webpage as clean, LLM-ready Markdown from your terminal",
   "main": "src/index.js",
   "exports": {
@@ -10,8 +10,21 @@
     "./frontmatter": "./src/frontmatter.js"
   },
   "type": "module",
-  "bin": { "snapmd": "bin/cli.js" },
-  "keywords": ["markdown","web-clipper","html-to-markdown","llm","ai","cli","notion","obsidian","rag","youtube-transcript"],
+  "bin": {
+    "snapmd": "bin/cli.js"
+  },
+  "keywords": [
+    "markdown",
+    "web-clipper",
+    "html-to-markdown",
+    "llm",
+    "ai",
+    "cli",
+    "notion",
+    "obsidian",
+    "rag",
+    "youtube-transcript"
+  ],
   "author": "Suhas Holla",
   "license": "MIT",
   "repository": {
@@ -22,8 +35,15 @@
   "bugs": {
     "url": "https://github.com/suhashollakc/snapmd/issues"
   },
-  "engines": { "node": ">=18.0.0" },
-  "files": ["bin/","src/","README.md","LICENSE"],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "test": "node --test test/converter.test.js test/api.test.js test/frontmatter.test.js test/youtube.test.js test/readability.test.js"
   },
