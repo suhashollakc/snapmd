@@ -1,7 +1,7 @@
 {
   "name": "snapmd",
-  "version": "1.0.1",
-  "description": "Clip any webpage as clean, LLM-ready Markdown from your terminal",
+  "version": "1.1.0",
+  "description": "Clip any webpage as clean, LLM-ready Markdown from your terminal. Supports YouTube, GitHub, Reddit, HN, StackOverflow. Includes MCP server for AI tool use.",
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js",
@@ -11,7 +11,8 @@
   },
   "type": "module",
   "bin": {
-    "snapmd": "bin/cli.js"
+    "snapmd": "bin/cli.js",
+    "snapmd-mcp": "bin/mcp.js"
   },
   "keywords": [
     "markdown",
@@ -20,10 +21,16 @@
     "llm",
     "ai",
     "cli",
+    "mcp",
+    "mcp-server",
     "notion",
     "obsidian",
     "rag",
-    "youtube-transcript"
+    "youtube-transcript",
+    "github",
+    "reddit",
+    "hackernews",
+    "stackoverflow"
   ],
   "author": "Suhas Holla",
   "license": "MIT",
@@ -45,7 +52,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test test/converter.test.js test/api.test.js test/frontmatter.test.js test/youtube.test.js test/readability.test.js"
+    "test": "node --test test/converter.test.js test/api.test.js test/frontmatter.test.js test/youtube.test.js test/readability.test.js test/github.test.js test/reddit.test.js test/hackernews.test.js test/stackoverflow.test.js test/mcp.test.js"
   },
   "dependencies": {
     "linkedom": "^0.18.12"
