@@ -2,6 +2,12 @@ import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { clip, clipHtml } from '../src/index.js';
 
+const FAKE_HTML = '<html><head><title>Example Domain</title><meta property="og:title" content="Example Domain"></head><body><h1>Example Domain</h1><p>This domain is for use in illustrative examples.</p></body></html>';
+
+function mockFetch() {
+  return async function fetchUrl() { return FAKE_HTML; };
+}
+
 describe('MCP tool handlers (via API)', () => {
 
   it('clip_url equivalent: clips a URL with options', async () => {
@@ -10,6 +16,7 @@ describe('MCP tool handlers (via API)', () => {
       fullPage: false,
       includeImages: true,
       includeLinks: true,
+      fetchFn: mockFetch(),
     });
     assert.ok(result.markdown);
     assert.ok(result.markdown.includes('Example Domain'));
@@ -32,7 +39,7 @@ describe('MCP tool handlers (via API)', () => {
     const results = [];
     for (const url of urls) {
       try {
-        const result = await clip(url, { frontmatter: true });
+        const result = await clip(url, { frontmatter: true, fetchFn: mockFetch() });
         results.push({ url, markdown: result.markdown, meta: result.meta, stats: result.stats });
       } catch (e) {
         results.push({ url, error: e.message });
@@ -51,7 +58,6 @@ describe('MCP tool handlers (via API)', () => {
   });
 
   it('detects GitHub URLs for routing', async () => {
-    // Just test the URL detection logic, not the full fetch
     const { isGitHubUrl } = await import('../src/parsers/github.js');
     assert.ok(isGitHubUrl('https://github.com/suhashollakc/snapmd'));
   });
